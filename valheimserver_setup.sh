@@ -2,7 +2,7 @@
 cd "$(dirname "$0")"
 set -ex
 useradd -m steam || true
-ln -snf /home/steam steam
+ln -snf /home/steam "$HOME/steam"
 apt update -y
 apt upgrade -y
 apt install software-properties-common -y
