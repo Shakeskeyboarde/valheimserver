@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd /root
+cd "$(dirname "$0")"
 set -ex
 useradd -m steam || true
 ln -snf /home/steam steam
