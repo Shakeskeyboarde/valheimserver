@@ -23,9 +23,9 @@ ExecStart=/home/steam/valheimserver/valheim_server.x86_64 \
   -batchmode \
   -port 2456 \
   -public 1 \
-  -name "Key Lime Pie" \
-  -world "asdfasdf" \
-  -password "GangaJamuna7" \
+  -password 12345 \
+  -name 12345 \
+  -world "default" \
   -savedir "/home/steam/valheimserver/valheim_save_data" \
   -preset easy \
   -modifier deathpenalty casual
