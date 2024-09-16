@@ -20,4 +20,13 @@ echo 76561197994236995 > "$HOME/valheimserver/valheim_save_data/adminlist.txt"
 EOF
 
 #ln -s valheimserver.service /etc/systemd/system/valheimserver.service
-systemctl link "$HOME/valheimserver.service"
+systemctl link ./valheimserver.service
+
+set +x
+echo
+echo "TODO:"
+echo "  - Restart (system): shutdown -r now"
+echo "  - Service (systemd): systemctl enable valheimserver"
+echo "  - Backups (cron): 0 9 * * * \"$CWD/valheimserver_backup.sh\" > /var/log/valheimserver_backup_cron.log 2>&1"
+echo
+
