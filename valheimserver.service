@@ -1,0 +1,35 @@
+[Unit]
+Description=Valheim Dedicated Server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Environment=SteamAppId=892970
+Environment=LD_LIBRARY_PATH=/home/steam/valheimserver/linux64:$LD_LIBRARY_PATH
+Type=simple
+Restart=on-failure
+RestartSec=10
+KillSignal=SIGINT
+User=steam
+Group=steam
+WorkingDirectory=/home/steam/valheimserver
+ExecStartPre=/usr/games/steamcmd \
+  +force_install_dir /home/steam/valheimserver \
+  +login anonymous \
+  +app_update 896660 validate \
+  +exit
+ExecStart=/home/steam/valheimserver/valheim_server.x86_64 \
+  -nographics \
+  -batchmode \
+  -port 2456 \
+  -public 1 \
+  -name "Key Lime Pie" \
+  -world "asdfasdf" \
+  -password "GangaJamuna7" \
+  -savedir "/home/steam/valheimserver/valheim_save_data" \
+  -preset easy \
+  -modifier deathpenalty casual
+
+[Install]
+WantedBy=multi-user.target
+
