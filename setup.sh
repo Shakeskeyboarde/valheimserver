@@ -30,6 +30,6 @@ echo
 echo "TODO:"
 echo "  - Restart (system): shutdown -r now"
 echo "  - Service (systemd): systemctl enable valheimserver"
-echo "  - Backups (cron): 0 9 * * * \"$CWD/valheimserver_backup.sh\" > /var/log/valheimserver_backup_cron.log 2>&1"
+echo "  - Backups (cron): 0 9 * * * \"$CWD/backup.sh\" > /var/log/valheimserver_backup_cron.log 2>&1"
 echo
 
